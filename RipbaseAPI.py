@@ -3,7 +3,6 @@ from flask import Flask, jsonify, request
 from waitress import serve
 
 Ripbase = Flask(__name__)
-
 RED = "\033[91m"
 GREEN = "\033[92m"
 YELLOW = "\033[93m"
@@ -35,7 +34,7 @@ def getAccessToken():
         "Priority": "u=0",
         "TE": "trailers"
     }
-    payload = {"email": "", "password": "", "gotrue_meta_security": {}}
+    payload = {"email": "YOUR_EMAIL", "password": "YOUR_PASS", "gotrue_meta_security": {}}
     response = requests.post(url, headers=headers, json=payload)
     
     if response.ok:
@@ -95,7 +94,7 @@ def SteamInfo(access_token: str, steamId: str):
    if response.ok:
        return response.json()
    else:
-       print("Failed to fetch email data")
+       print("Failed to fetch steam data")
        return None   
    
 def XboxInfo(access_token: str, xboxId: str):
@@ -110,7 +109,7 @@ def XboxInfo(access_token: str, xboxId: str):
    if response.ok:
        return response.json()
    else:
-       print("Failed to fetch email data")
+       print("Failed to fetch xbox data")
        return None
 
 def UpdateProfile(access_token: str,  username: str, avatar_url: str):
@@ -206,7 +205,7 @@ def search_route():
         if result is not None:
             return jsonify(result)
     elif xboxId:    
-        result = XboxInfo(token, steamId)
+        result = XboxInfo(token, xboxId)
         if result is not None:
             return jsonify(result)
     elif term:    
