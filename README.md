@@ -19,7 +19,7 @@ Rip Seekbase is a lightweight Flask-based API wrapper that interacts with the Se
 
 ## The Start
 
-This start with intercepting the api response finding out we can give ourself unlimited credits
+This started with intercepting the api response finding out we can give ourself unlimited credits
 <div align="center">
   <img src="https://github.com/user-attachments/assets/9c7a6d4f-d0d8-41db-bca6-8cd7cda1070e" alt="RipBase">
 </div>
